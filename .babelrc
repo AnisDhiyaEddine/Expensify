@@ -1,0 +1,6 @@
+{
+  "presets": ["@babel/env", "@babel/preset-react"],
+  "plugins": ["transform-class-properties"]
+}
+
+//presets modification else packages are the same
