@@ -8,8 +8,7 @@ import Header from "../components/Header";
 import HelpPage from "../components/HelpPage";
 import NotFoundPage from "../components/NotFoundPage";
 
-
-const AppRouter = (
+const AppRouter = () => (
   <BrowserRouter>
     <Header />
     <Switch>

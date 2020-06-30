@@ -1,14 +1,15 @@
 // Get visible expenses
-export default (store) => {
-  let expenses = store.getState().expenses;
-  let { text, sortBy, startDate, endDate } = store.getState().filters;
-
+import moment from "moment";
+export default (expenses = [], { text, sortBy, startDate, endDate } = {}) => {
   return expenses
     .filter((expense) => {
-      const startDateMatch =
-        typeof startDate !== "number" || expense.createdAt >= startDate;
-      const endDateMatch =
-        typeof endDate !== "number" || expense.createdAt <= endDate;
+      const startDateMatch = moment(expense.createdAt)
+        ? moment(expense.createdAt).isSameOrAfter(startDate, "day")
+        : true;
+      const endDateMatch = moment(expense.createdAt)
+        ? moment(expense.createdAt).isSameOrBefore(endDate, "day")
+        : true;
+
       const textMatch = expense.description
         .toLowerCase()
         .includes(text.toLowerCase());
