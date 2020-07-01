@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render expense list when no data is provided 1`] = `
+<div>
+  <p>
+    No expense found
+  </p>
+</div>
+`;
+
+exports[`render expense list with the given expenses 1`] = `
+<div>
+  <Connect(ExpenseListItem)
+    amount={10}
+    createdAt={0}
+    description="Hello"
+    id="1"
+    key="1"
+    note=""
+  />
+  <Connect(ExpenseListItem)
+    amount={0}
+    createdAt={-345600000}
+    description="high tech"
+    id="2"
+    key="2"
+    note=""
+  />
+  <Connect(ExpenseListItem)
+    amount={200}
+    createdAt={345600000}
+    description="yepp"
+    id="3"
+    key="3"
+    note=""
+  />
+</div>
+`;

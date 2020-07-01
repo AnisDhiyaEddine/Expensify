@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { removeExpense } from "../actions/expenses";
-const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
+export const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => {
   return (
     <div>
       <NavLink to={`/edit/${id}`}>

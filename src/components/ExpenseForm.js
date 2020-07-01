@@ -2,7 +2,6 @@ import React from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
 import "react-dates/initialize";
-import "react-dates/lib/css/_datepicker.css";
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -10,7 +9,7 @@ export default class ExpenseForm extends React.Component {
 
     this.state = {
       description: props.expense ? props.expense.description : "",
-      note: props.expense ? props.expense.expense : "",
+      note: props.expense ? props.expense.note : "",
       amount: props.expense ? props.expense.amount : "",
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocus: false,
@@ -33,12 +32,16 @@ export default class ExpenseForm extends React.Component {
   };
 
   onAmountChange = (e) => {
-    const amount = e.target.value;
+    const amount = e.target.value.toString();
     if (!amount || amount.match(/^\d{1,}(\.\d{0,2})?$/)) {
       e.target.value = amount;
 
       this.setState(() => ({
         amount: parseFloat(amount) || 0,
+      }));
+    } else {
+      this.setState(() => ({
+        error: "invalid amount data",
       }));
     }
   };
@@ -89,7 +92,7 @@ export default class ExpenseForm extends React.Component {
             onChange={this.onAmountChange}
             placeholder="Amount"
           />
-          <SingleDatePicker
+          <SingleDatePicker className="singleDatePicker"
             date={this.state.createdAt}
             onDateChange={this.onDateChange}
             focused={this.state.calendarFocus}

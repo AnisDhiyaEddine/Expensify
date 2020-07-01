@@ -2,7 +2,7 @@
   "scripts": {
     "build": "webpack",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest --configue=jestConfig.json"
   },
   "dependencies": {
     "@babel/core": "^7.10.3",
@@ -14,10 +14,15 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.5.0",
     "jest": "^26.1.0",
+    "jest-css-modules": "^2.1.0",
     "moment": "^2.27.0",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
+    "raf": "^3.4.1",
     "react": "^16.13.1",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "^21.8.0",
@@ -25,6 +30,7 @@
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
+    "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
@@ -37,6 +43,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "identity-obj-proxy": "^3.0.0",
     "webpack-cli": "^3.3.12"
   }
 }

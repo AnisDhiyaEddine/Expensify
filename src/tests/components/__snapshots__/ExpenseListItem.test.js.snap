@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render item with the right data 1`] = `
+<div>
+  <NavLink
+    to="/edit/1"
+  >
+    <h3>
+      Hello
+    </h3>
+  </NavLink>
+  <p>
+    Amount : 
+    10
+  </p>
+  <p>
+    CreatedAt : 
+    0
+  </p>
+</div>
+`;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render not found page 1`] = `
+<div>
+  <h1>
+    This is from the app dashboard page
+  </h1>
+  <Connect(ExpenseListFilter) />
+  <Connect(ExpenseList) />
+</div>
+`;
